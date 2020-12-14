@@ -24,6 +24,9 @@ import Foundation
 #if os(watchOS)
 public typealias FoundationHTTPHandler = StringHTTPHandler
 #else
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
 public class FoundationHTTPHandler: HTTPHandler {
 
     var buffer = Data()
