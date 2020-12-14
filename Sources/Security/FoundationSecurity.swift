@@ -22,6 +22,7 @@
 
 import Foundation
 import CryptoSwift
+import Security
 
 public enum FoundationSecurityError: Error {
     case invalidRequest
