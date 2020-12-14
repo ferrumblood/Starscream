@@ -24,11 +24,18 @@ import PackageDescription
 
 let package = Package(
         name: "Starscream",
+        platforms: [
+          .macOS(.v10_12), .iOS(.v9), .tvOS(.v9)
+        ],
         products: [
             .library(name: "Starscream", targets: ["Starscream"])
         ],
+        dependencies: [
+            .package(url: "https://github.com/krzyzanowskim/CryptoSwift.git", .upToNextMinor(from: "1.3.8"))
+        ],
         targets: [
             .target(name: "Starscream",
+                    dependencies: ["CryptoSwift"],
                     path: "Sources")
         ]
 )
